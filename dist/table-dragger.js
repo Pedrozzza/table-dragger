@@ -2622,6 +2622,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var length = el.children.length;
 	
 	      (0, _from2.default)(el.children).forEach(function (li, dex) {
+	        console.log(li);
 	        var table = li && li.querySelector('table');
 	        if (_this3.options.onlyBody && mode === 'row' && !(0, _from2.default)(table.children).some(function (o) {
 	          return o.nodeName === 'TBODY';
