@@ -119,7 +119,7 @@ export default class Dragger {
       /* eslint-disable no-param-reassign*/
       const table = li && li.querySelector('table');
       if ((this.options.onlyBody && mode === 'row' && !Array.from(table.children).some(o => o.nodeName === 'TBODY')) ||
-        (this.options.onlyBody && this.options.fixFirstColumn && mode === 'column' && i === 0)) {
+        (this.options.onlyBody && this.options.fixColumns && mode === 'column' && i < this.options.fixPositions)) {
         li.classList.add(classes.static);
       }
 

@@ -2625,7 +2625,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var table = li && li.querySelector('table');
 	        if (_this3.options.onlyBody && mode === 'row' && !(0, _from2.default)(table.children).some(function (o) {
 	          return o.nodeName === 'TBODY';
-	        }) || _this3.options.onlyBody && _this3.options.fixFirstColumn && mode === 'column' && i === 0) {
+	        }) || _this3.options.onlyBody && _this3.options.fixColumns && mode === 'column' && i < _this3.options.fixPositions) {
 	          li.classList.add(_classes2.default.static);
 	        }
 	
