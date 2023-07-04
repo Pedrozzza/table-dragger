@@ -114,19 +114,19 @@ export default class Dragger {
     const spacing = window.getComputedStyle(originEl).getPropertyValue('border-spacing').split(' ')[0];
     const attr = mode === 'column' ? 'margin-right' : 'margin-bottom';
     const length = el.children.length;
-
+    let i = 0;
     Array.from(el.children).forEach((li, dex) => {
       /* eslint-disable no-param-reassign*/
-      console.log(li)
       const table = li && li.querySelector('table');
       if ((this.options.onlyBody && mode === 'row' && !Array.from(table.children).some(o => o.nodeName === 'TBODY')) ||
-        (this.options.onlyBody && this.options.fixColumns && mode === 'column' && li.classList.contains('no-drag'))) {
+        (this.options.onlyBody && this.options.fixColumns && mode === 'column' && i < this.fixedPositions)) {
         li.classList.add(classes.static);
       }
 
       if (spacing && dex < (length - 1)) {
         li.style[attr] = `-${spacing}`;
       }
+      i += 1;
     });
 
     el.parentElement.classList.add(classes.dragging);
