@@ -2620,19 +2620,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var spacing = window.getComputedStyle(originEl).getPropertyValue('border-spacing').split(' ')[0];
 	      var attr = mode === 'column' ? 'margin-right' : 'margin-bottom';
 	      var length = el.children.length;
-	      var i = 0;
+	
 	      (0, _from2.default)(el.children).forEach(function (li, dex) {
 	        var table = li && li.querySelector('table');
 	        if (_this3.options.onlyBody && mode === 'row' && !(0, _from2.default)(table.children).some(function (o) {
 	          return o.nodeName === 'TBODY';
-	        }) || _this3.options.onlyBody && _this3.options.fixColumns && mode === 'column' && i < _this3.options.fixPositions) {
+	        }) || _this3.options.onlyBody && _this3.options.fixColumns && mode === 'column' && li.classList.contains('no-drag')) {
 	          li.classList.add(_classes2.default.static);
 	        }
 	
 	        if (spacing && dex < length - 1) {
 	          li.style[attr] = '-' + spacing;
 	        }
-	        i += 1;
 	      });
 	
 	      el.parentElement.classList.add(_classes2.default.dragging);
