@@ -56,7 +56,6 @@ export default class Dragger {
   onDrag () {
     css(document.body, { overflow: 'hidden' });
     const barWidth = getScrollBarWidth();
-    console.log(barWidth,'barWidth');
     if (barWidth) {
       css(document.body, { 'padding-right': `${barWidth + bodyPaddingRight}px` });
     }
